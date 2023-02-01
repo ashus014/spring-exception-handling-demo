@@ -30,7 +30,7 @@ public class GreetingController {
 //    }
 
     // working with controller level exception
-    @ExceptionHandler
+    @ExceptionHandler(IllegalStateException.class)
     public ResponseEntity<?> handleException(IllegalStateException exception) {
         return ResponseEntity.badRequest().body(exception.getMessage());
     }
